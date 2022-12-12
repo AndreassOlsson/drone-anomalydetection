@@ -1,5 +1,5 @@
 # drone-anomalydetection
-This project is about anomaly detection on drone footage and here I will describe the method and progress so far. The final implementation is underway and the simplified versions of the problem show promising results. 
+This project is about anomaly detection on drone footage and here I will describe the method and progress so far. The final implementation is underway and the simplified versions of the problem show promising results. Note that this repo only contains the ipynb files and is (at the moment) only for demonstration.
 
 The method I plan on implementing utilizes a vision-transformer-encoder and a convolutional decoder. It tries to predict the next frame of a video and then compare the predicted frame with the observed frame. The comparison will be l2 distance. For testing, the model will classify a frame as normal or not based on how big the l2 distance between the prediction and the observation is. This method is based mainly on P. Jin, L. Mou, G. -S. Xia and X. X. Zhu, "Anomaly Detection in Aerial Videos With Transformers," in IEEE Transactions on Geoscience and Remote Sensing, vol. 60, pp. 1-13, 2022, Art no. 5628213, doi: 10.1109/TGRS.2022.3198130. The method visualization from that paper is shown below and closely resembles my intended method.
 https://arxiv.org/pdf/2209.13363.pdf
