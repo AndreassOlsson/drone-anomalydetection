@@ -1,19 +1,20 @@
 # drone-anomalydetection
 This project is about anomaly detection on drone footage and here I will describe the method and progress so far. The final implementation is underway and the simplified versions of the problem show promising results. 
 
-The method I plan on implementing utilizes a vision-transformer-encoder and a convolutional decoder. It tries to predict the next frame of a video and then compare the predicted frame with the observed frame. The comparison will be l2 distance. For testing, the model will classify a frame as normal or not based on how big the l2 distance between the prediction and the observation is. This method is based mainly on P. Jin, L. Mou, G. -S. Xia and X. X. Zhu, "Anomaly Detection in Aerial Videos With Transformers," in IEEE Transactions on Geoscience and Remote Sensing, vol. 60, pp. 1-13, 2022, Art no. 5628213, doi: 10.1109/TGRS.2022.3198130. The visualization (from the paper) is shown below:
+The method I plan on implementing utilizes a vision-transformer-encoder and a convolutional decoder. It tries to predict the next frame of a video and then compare the predicted frame with the observed frame. The comparison will be l2 distance. For testing, the model will classify a frame as normal or not based on how big the l2 distance between the prediction and the observation is. This method is based mainly on P. Jin, L. Mou, G. -S. Xia and X. X. Zhu, "Anomaly Detection in Aerial Videos With Transformers," in IEEE Transactions on Geoscience and Remote Sensing, vol. 60, pp. 1-13, 2022, Art no. 5628213, doi: 10.1109/TGRS.2022.3198130. The method visualization from that paper is shown below and closely resembles my intended method.
+https://arxiv.org/pdf/2209.13363.pdf
 
 ![image](https://user-images.githubusercontent.com/59232492/207018544-3de91092-eecb-4e55-9d8b-bc5599805117.png)
 
 
-A visualization on how to model will determine a frame as normal or not is shown below. The image is taken from Avola, Danilo & Cannistraci, Irene & Cascio, Marco & Cinque, Luigi & Diko, Anxhelo & Fagioli, Alessio & Foresti, Gian & Lanzino, Romeo & Mancini, Maurizio & Mecca, Alessio & Pannone, Daniele. (2022). A Novel GAN-Based Anomaly Detection and Localization Method for Aerial Video Surveillance at Low Altitude. Remote Sensing. 14. 4110. 10.3390/rs14164110:
+A visualization on observation vs prediction is shown below. The image is taken from Avola, Danilo & Cannistraci, Irene & Cascio, Marco & Cinque, Luigi & Diko, Anxhelo & Fagioli, Alessio & Foresti, Gian & Lanzino, Romeo & Mancini, Maurizio & Mecca, Alessio & Pannone, Daniele. (2022). A Novel GAN-Based Anomaly Detection and Localization Method for Aerial Video Surveillance at Low Altitude. Remote Sensing. 14. 4110. 10.3390/rs14164110. https://www.researchgate.net/publication/362870834_A_Novel_GAN-Based_Anomaly_Detection_and_Localization_Method_for_Aerial_Video_Surveillance_at_Low_Altitude
 
 ![image](https://user-images.githubusercontent.com/59232492/207019387-bd8a7886-880b-4e1e-a64e-08b5af4aec20.png)
 
 
 Here, the right left image is the observed "next frame" and the right image is the predicted "next image" and is generated from a number of input frames. This would be considered an anomaly because the prediction differs alot from the observation - the l2 distance would be relatively large. 
 
-At first, I created a visiontransformer mnist classifier just to get the visiontransformer up and running. Then I modified that same classifier to output a latent feature and appended a convolutional decoder. This created an autoencoder which takes an input mnist image, compresses it and then reconstructs it. This applies to anomaly detection in the sence that "normal" images that the model was trained on will be reconstructed succesfully - as opposed to anomalies. 
+In my implementation I started of by creating a visiontransformer mnist classifier just to get the visiontransformer up and running. Then I modified that same classifier to output a latent feature and appended a convolutional decoder. This created an autoencoder which takes an input mnist image, compresses it and then reconstructs it. This applies to anomaly detection in the sence that "normal" images that the model was trained on will be reconstructed succesfully - as opposed to anomalies. 
 
 ![image](https://user-images.githubusercontent.com/59232492/207013661-055a0a20-8413-4b10-a91a-e5a8432b7085.png)
 
