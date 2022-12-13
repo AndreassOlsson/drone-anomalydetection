@@ -24,4 +24,7 @@ The next step was modifying this model to accept sequences of images or "videos"
 ![image](https://user-images.githubusercontent.com/59232492/207014374-db7f326b-0550-4e21-8ac9-3370e044e50b.png)
 
 
-I just finished the dataloaders for the real dataset and I will now start implementing the model on the real dataset!
+I just finished the dataloaders for the real dataset. Here are 2 sample items from the dataloaders
+
+![image](https://user-images.githubusercontent.com/59232492/207338706-a41e0ad5-18ef-4012-9ebd-fa6df5d1fe35.png)
+
