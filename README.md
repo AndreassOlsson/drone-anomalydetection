@@ -24,7 +24,7 @@ The next step was modifying this model to accept sequences of images or "videos"
 ![image](https://user-images.githubusercontent.com/59232492/207014374-db7f326b-0550-4e21-8ac9-3370e044e50b.png)
 
 
-I just finished the dataloaders for the real dataset. Here are 2 sample items from the dataloaders
+I just finished the dataloaders for the real dataset. Here are 2 sample items from the dataloaders. They look almost the same but this is because they are only 1 frame from each other. If this does not capture the temporal aspect good enough with regards to the speed of which the drone is flying, the intervals may be increased.
 
 ![image](https://user-images.githubusercontent.com/59232492/207338706-a41e0ad5-18ef-4012-9ebd-fa6df5d1fe35.png)
 
