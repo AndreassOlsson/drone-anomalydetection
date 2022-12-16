@@ -28,3 +28,5 @@ I just finished the dataloaders for the real dataset. Here are 2 sample items fr
 
 ![image](https://user-images.githubusercontent.com/59232492/207338706-a41e0ad5-18ef-4012-9ebd-fa6df5d1fe35.png)
 
+Update:
+I have implemented the model on the real dataset now. I started by training the model as it was (not very good as it would turn out). Then I changed it and it looked more promising but due to colab's GPU restriction I did not have time to train the updated model for more than one epoch. However, I have access to very powerful GPU's via a webservice and I am basically done with the preparations for using those! I am now very optmistic and believe that I will achieve good results with these fixes!
